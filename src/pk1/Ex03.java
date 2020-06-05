@@ -10,7 +10,7 @@ public class Ex03 {
 			if (thu == 8) {
 				System.out.println("Chu nhat");
 			} else {
-				System.out.println("Thu: " + thu);
+				System.out.println("Thu " + thu);
 			}
 		}
 	}
