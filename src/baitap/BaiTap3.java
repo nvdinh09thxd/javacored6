@@ -91,11 +91,12 @@ public class BaiTap3 {
 	}
 
 	public static int chiSoPTAm(int[] arrInt) {
+		int index = -1;
 		for (int i = 0; i < arrInt.length; i++) {
 			if (arrInt[i] < 0)
-				return i;
+				index = i;
 		}
-		return -1;
+		return index;
 	}
 
 	public static int soLonHon50(int[] arrInt) {
