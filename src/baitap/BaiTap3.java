@@ -65,22 +65,18 @@ public class BaiTap3 {
 	}
 
 	public static int chiSoPTDuong(int[] arrInt) {
-		int index = -1;
 		for (int i = 0; i < arrInt.length; i++) {
-			if (arrInt[i] > 0) {
-				index = i;
-				break;
-			}
+			if (arrInt[i] > 0)
+				return i;
 		}
-		return index;
+		return -1;
 	}
 
 	public static int soLuongPTAm(int[] arrInt) {
 		int n = 0;
 		for (int item : arrInt) {
-			if (item < 0) {
+			if (item < 0)
 				n++;
-			}
 		}
 		return n;
 	}
@@ -88,21 +84,18 @@ public class BaiTap3 {
 	public static int tongPTAm(int[] arrInt) {
 		int s = 0;
 		for (int item : arrInt) {
-			if (item < 0) {
+			if (item < 0)
 				s += item;
-			}
 		}
 		return s;
 	}
 
 	public static int chiSoPTAm(int[] arrInt) {
-		int index = -1;
 		for (int i = 0; i < arrInt.length; i++) {
-			if (arrInt[i] < 0) {
-				index = i;
-			}
+			if (arrInt[i] < 0)
+				return i;
 		}
-		return index;
+		return -1;
 	}
 
 	public static int soLonHon50(int[] arrInt) {

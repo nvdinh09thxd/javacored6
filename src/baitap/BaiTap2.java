@@ -37,8 +37,8 @@ public class BaiTap2 {
 
 	public static int demSoChiaHet5(int[] arrInt) {
 		int n = 0;
-		for (int i = 0; i < arrInt.length; i++) {
-			if (arrInt[i] % 5 == 0)
+		for (int i : arrInt) {
+			if (i % 5 == 0)
 				n++;
 		}
 		return n;
@@ -46,8 +46,8 @@ public class BaiTap2 {
 
 	public static int demSoChiaHet34(int[] arrInt) {
 		int n = 0;
-		for (int i = 0; i < arrInt.length; i++) {
-			if (arrInt[i] % 3 == 0 && arrInt[i] % 4 == 0)
+		for (int i : arrInt) {
+			if (i % 3 == 0 && i % 4 == 0)
 				n++;
 		}
 		return n;
