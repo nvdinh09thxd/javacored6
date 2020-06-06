@@ -30,10 +30,15 @@ public class BaiTap3 {
 	}
 
 	public static void displayData(int[] arrInt) {
-		for (int item : arrInt) {
-			System.out.print(" " + item);
+		if (arrInt.length == 0)
+			System.out.println("Mảng rỗng!");
+		else {
+			System.out.print("Danh sach cac phan tu cua mang:");
+			for (int item : arrInt) {
+				System.out.print(" " + item);
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 
 	public static int tinhTongMang(int[] arrInt) {
@@ -108,19 +113,33 @@ public class BaiTap3 {
 		return n;
 	}
 
+	public static void trungBinhCongDuong(int[] arrInt) {
+		if (soLuongPTDuong(arrInt) == 0)
+			System.out.println("Trong mang khong co phan tu duong de tinh trung binh cong!");
+		else
+			System.out.println("Trung binh cong cac phan tu duong cua mang: "
+					+ (float) tongPTDuong(arrInt) / soLuongPTDuong(arrInt));
+	}
+
+	public static void trungBinhCongAm(int[] arrInt) {
+		if (soLuongPTAm(arrInt) == 0)
+			System.out.println("Trong mang khong co phan tu am de tinh trung binh cong!");
+		else
+			System.out.println(
+					"Trung binh cong cac phan tu am cua mang: " + (float) tongPTAm(arrInt) / soLuongPTAm(arrInt));
+	}
+
 	public static void main(String[] args) {
 		int m = 0;
 		boolean check = true;
 		do {
 			try {
 				System.out.print("Nhap so phan tu cua mang: ");
-				int number = Integer.parseInt(sc.nextLine());
-				if (number <= 0)
-					throw new NumberException("Vui long nhap so lon hon 0!");
-				else {
-					m = number;
+				m = Integer.parseInt(sc.nextLine());
+				if (m < 0)
+					throw new NumberException("Vui long nhap so lon hon hoac bang 0!");
+				else
 					check = false;
-				}
 			} catch (NumberFormatException e) {
 				System.out.println("Vui long nhap dung dinh dang so!");
 			} catch (NumberException e) {
@@ -128,26 +147,19 @@ public class BaiTap3 {
 			}
 		} while (check);
 		int[] arrSoNguyen = inputData(m);
-		System.out.print("Danh sach cac phan tu cua mang:");
 		displayData(arrSoNguyen);
-		System.out.println("Tong cac phan tu cua mang la: " + tinhTongMang(arrSoNguyen));
-		System.out.println("So luong cac phan tu duong la: " + soLuongPTDuong(arrSoNguyen));
-		System.out.println("Tong cac phan tu duong la: " + tongPTDuong(arrSoNguyen));
-		System.out.println("So luong cac phan tu am la: " + soLuongPTAm(arrSoNguyen));
-		System.out.println("Tong cac phan tu am la: " + tongPTAm(arrSoNguyen));
-		if (soLuongPTDuong(arrSoNguyen) == 0)
-			System.out.println("Trong mang khong co phan tu duong de tinh trung binh cong!");
-		else
-			System.out.println("Trung binh cong cac phan tu duong cua mang: "
-					+ (float) tongPTDuong(arrSoNguyen) / soLuongPTDuong(arrSoNguyen));
-		if (soLuongPTAm(arrSoNguyen) == 0)
-			System.out.println("Trong mang khong co phan tu am de tinh trung binh cong!");
-		else
-			System.out.println("Trung binh cong cac phan tu am cua mang: "
-					+ (float) tongPTAm(arrSoNguyen) / soLuongPTAm(arrSoNguyen));
-		System.out.println("Chi so phan tu duong dau tien cua mang: " + chiSoPTDuong(arrSoNguyen));
-		System.out.println("Chi so phan tu am cuoi cung cua mang: " + chiSoPTAm(arrSoNguyen));
-		System.out.println("Co " + soLonHon50(arrSoNguyen) + " so lon hon 50");
+		if (arrSoNguyen.length > 0) {
+			System.out.println("Tong cac phan tu cua mang la: " + tinhTongMang(arrSoNguyen));
+			System.out.println("So luong cac phan tu duong la: " + soLuongPTDuong(arrSoNguyen));
+			System.out.println("Tong cac phan tu duong la: " + tongPTDuong(arrSoNguyen));
+			System.out.println("So luong cac phan tu am la: " + soLuongPTAm(arrSoNguyen));
+			System.out.println("Tong cac phan tu am la: " + tongPTAm(arrSoNguyen));
+			trungBinhCongDuong(arrSoNguyen);
+			trungBinhCongAm(arrSoNguyen);
+			System.out.println("Chi so phan tu duong dau tien cua mang: " + chiSoPTDuong(arrSoNguyen));
+			System.out.println("Chi so phan tu am cuoi cung cua mang: " + chiSoPTAm(arrSoNguyen));
+			System.out.println("Co " + soLonHon50(arrSoNguyen) + " so lon hon 50");
+		}
 	}
 
 }

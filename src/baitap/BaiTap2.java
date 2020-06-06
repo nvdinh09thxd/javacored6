@@ -12,13 +12,11 @@ public class BaiTap2 {
 			do {
 				try {
 					System.out.print("Nhap so nguyen tu 21 den 99: ");
-					int number = Integer.parseInt(sc.nextLine());
-					if (number >= 100 || number <= 20)
+					arrInt[i] = Integer.parseInt(sc.nextLine());
+					if (arrInt[i] >= 100 || arrInt[i] <= 20)
 						throw new NumberException("Vui long nhap so tu 21 den 99!");
-					else {
-						arrInt[i] = number;
+					else
 						check = false;
-					}
 				} catch (NumberFormatException e) {
 					System.out.println("Vui long nhap dung dinh dang so!");
 				} catch (NumberException e) {
@@ -30,8 +28,13 @@ public class BaiTap2 {
 	}
 
 	public static void displayData(int[] arrInt) {
-		for (int i = 0; i < arrInt.length; i++) {
-			System.out.println("Phan tu thu " + (i + 1) + ": " + arrInt[i]);
+		if (arrInt.length == 0)
+			System.out.println("Mảng rỗng!");
+		else {
+			System.out.println("Danh sach cac so vua nhap la:");
+			for (int i = 0; i < arrInt.length; i++) {
+				System.out.println("Phan tu thu " + (i + 1) + ": " + arrInt[i]);
+			}
 		}
 	}
 
@@ -59,13 +62,11 @@ public class BaiTap2 {
 		do {
 			try {
 				System.out.print("Nhap so phan tu cua mang: ");
-				int number = Integer.parseInt(sc.nextLine());
-				if (number <= 0)
-					throw new NumberException("Vui long nhap so lon hon 0!");
-				else {
-					n = number;
+				n = Integer.parseInt(sc.nextLine());
+				if (n < 0)
+					throw new NumberException("Vui long nhap so lon hon hoac bang 0!");
+				else
 					check = false;
-				}
 			} catch (NumberFormatException e) {
 				System.out.println("Vui long nhap dung dinh dang so!");
 			} catch (NumberException e) {
@@ -73,10 +74,11 @@ public class BaiTap2 {
 			}
 		} while (check);
 		int[] arrInt = inputData(n);
-		System.out.println("Danh sach cac so vua nhap la:");
 		displayData(arrInt);
-		System.out.println("Co " + demSoChiaHet5(arrInt) + " so chia het cho 5");
-		System.out.println("Co " + demSoChiaHet34(arrInt) + " so vua chia het cho 3 vua chia het cho 4");
+		if (arrInt.length > 0) {
+			System.out.println("Co " + demSoChiaHet5(arrInt) + " so chia het cho 5");
+			System.out.println("Co " + demSoChiaHet34(arrInt) + " so vua chia het cho 3 vua chia het cho 4");
+		}
 	}
 
 }

@@ -26,7 +26,6 @@ public class Bai2 {
 				} catch (NumberException e) {
 					cont = true;
 					System.out.println(e.getMessage());
-					;
 				}
 			} while (cont);
 		}
