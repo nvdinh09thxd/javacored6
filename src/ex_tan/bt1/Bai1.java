@@ -1,4 +1,4 @@
-package ex_tan;
+package ex_tan.bt1;
 
 import java.util.Random;
 
@@ -21,8 +21,8 @@ public class Bai1 {
 
 	public int tong(int[] arSo) {
 		int sum = 0;
-		for (int i = 0; i < arSo.length; i++) {
-			sum += arSo[i];
+		for (int i : arSo) {
+			sum += i;
 		}
 		return sum;
 	}

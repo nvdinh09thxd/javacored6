@@ -1,0 +1,7 @@
+﻿- Mảng nhiều đối tượng có cùng một kiểu dữ liệu
+- Mỗi phần tử của mảng có thể truy xuất thông tin qua chỉ số mảng
+- Mảng là cố định không thêm, sửa, xóa đối tượng
+- khai báo mảng <kiểu dữ liệu >[]<tên mảng>;
+- mảng giúp tối ưu hóa số lặp lại khi khai báo
+- collection hiện thị một nhóm các đối tượng
+- có thể sử dụng collection  để thêm sửa xóa trong mảng
